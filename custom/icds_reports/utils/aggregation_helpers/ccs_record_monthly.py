@@ -60,7 +60,7 @@ class CcsRecordMonthlyAggregationHelper(BaseICDSAggregationHelper):
         open_in_month = ("({} - case_list.opened_on::date)::integer >= 0"
                          " AND (case_list.closed = 0"
                          " OR (case_list.closed_on::date - {})::integer > 0)").format(end_month_string,
-                                                                                       start_month_string)
+                                                                                      start_month_string)
         alive_in_month = "(case_list.date_death is null OR case_list.date_death-{}>0)".format(
             start_month_string)
         seeking_services = "(case_list.is_availing = 1 AND case_list.is_migrated = 0)"
@@ -71,7 +71,7 @@ class CcsRecordMonthlyAggregationHelper(BaseICDSAggregationHelper):
         lactating_all = "({} AND  case_list.is_migrated=0)".format(ccs_lactating)
 
         pregnant_to_consider = "(case_list.pregnant=1 AND {} AND {} AND {})".format(seeking_services, open_in_month,
-                                                                                  alive_in_month)
+                                                                                    alive_in_month)
         pregnant_all = "(case_list.pregnant=1 AND  case_list.is_migrated=0)"
 
         valid_in_month = "({} AND ( case_list.pregnant=1 OR {}))".format(alive_in_month, lactating)
@@ -91,12 +91,13 @@ class CcsRecordMonthlyAggregationHelper(BaseICDSAggregationHelper):
                                  "THEN 1 ELSE CASE WHEN (case_list.edd-case_list.opened_on::date)::integer<91" \
                                  "THEN 3 ELSE 2 END END)"
 
-        postnatal = "(case_list.add is not null AND ({}-case_list.add)::integer>=0 AND ({}-case_list.add)::integer<=21" \
+        postnatal = "(case_list.add is not null AND ({}-case_list.add)::integer>=0 AND ({}-case_list.add)::integer<=21"\
                     " AND {} AND {} AND {})".format(end_month_string, start_month_string,
                                                     seeking_services, alive_in_month,
                                                     open_in_month)
-        tetanus_complete = "({} AND ut.tt_complete_date is not null AND ut.tt_complete_date<={})".format(pregnant_to_consider,
-                                                                                             end_month_string)
+        tetanus_complete = "({} AND ut.tt_complete_date is not null " \
+                           "AND ut.tt_complete_date<={})".format(pregnant_to_consider,
+                                                                 end_month_string)
         pnc_complete = "(case_list.pnc1_date<{})".format(end_month_string)
 
         columns = (
@@ -123,9 +124,11 @@ class CcsRecordMonthlyAggregationHelper(BaseICDSAggregationHelper):
             ('anc4_received_at_delivery', 'CASE WHEN {} AND case_list.anc4_received=1 '
                                           'THEN 1 ELSE 0 END'.format(delivered_in_month)),
             ('registration_trimester_at_delivery', 'CASE WHEN {} '
-                                                   'THEN {} ELSE null END'.format(delivered_in_month, registration_trimester)),
+                                                   'THEN {} ELSE null END'.format(delivered_in_month,
+                                                                                  registration_trimester)),
             ('using_ifa', 'case_list.using_ifa_last_visit'),
-            ('ifa_consumed_last_seven_days', 'CASE WHEN {}>1 THEN case_list.ifa_gte_4_open_cases ELSE 0 END'.format(trimester)),
+            ('ifa_consumed_last_seven_days', 'CASE WHEN {}>1 THEN case_list.ifa_gte_4_open_cases '
+                                             'ELSE 0 END'.format(trimester)),
             ('anemic_severe', "CASE WHEN case_list.anemia_status_last_visit='severe' THEN 1 ELSE 0 END"),
             ('anemic_moderate', "CASE WHEN case_list.anemia_status_last_visit='moderate' THEN 1 ELSE 0 END"),
             ('anemic_normal', "CASE WHEN case_list.anemia_status_last_visit='normal' THEN 1 ELSE 0 END"),
