@@ -3,3 +3,8 @@ task_case_id1,2017-04-01,state2,a40,bfc8681e-bd2d-45f2-a811-cdffa41ddf32,pregnan
 task_case_id2,2017-04-01,state1,a12,3a9c23af-0a21-475c-a9b8-1de4c1ed68b8,pregnancy,,,2017-03-02,,,,,,
 task_case_id3,2017-04-01,state2,a39,45e84a85-9944-4027-b0eb-866a79cbe955,pregnancy,,,2017-05-02,,,,,,
 task_case_id4,2017-04-01,state2,a14,8433225c-142d-4fc1-a8f3-99ae622d3fc3,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
+task_case_id5,2017-04-01,state3,a105,random_uuid,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
+task_case_id6,2017-04-01,state4,a104,random_uuid,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
+task_case_id7,2017-04-01,state5,a103,random_uuid,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
+task_case_id8,2017-04-01,state6,a102,random_uuid,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
+task_case_id9,2017-04-01,state7,a101,random_uuid,pregnancy,,2016-03-02,2016-03-02,2016-03-02,2016-03-02,2016-03-02,,,
