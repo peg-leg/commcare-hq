@@ -55,31 +55,31 @@ var iti = $number.intlTelInput({
     },
 });
     
-var input = document.querySelector("#id_phone_number"),
-  errorMsg = document.querySelector("#id_phone_number"),
-  validMsg = document.querySelector("#id_phone_number");
-
-var reset = function() {
-  input.classList.remove("error");
-  errorMsg.innerHTML = "";
-  errorMsg.classList.add("hide");
-  validMsg.classList.add("hide");
-};
-
-    // on blur: validate
-        input.addEventListener('blur', function () {
-          reset();
-          if (input.value.trim()) {
-            if ($(this).intlTelInput("isValidNumber")) {
-              validMsg.classList.remove("hide");
-            } else {
-              input.classList.add("error");
-              var errorCode = $(this).intlTelInput("getValidationError");
-              errorMsg.innerHTML = errorMap[errorCode];
-              errorMsg.classList.remove("hide");
-            }
-          }
-    });
+// var input = document.querySelector("#id_phone_number"),
+//   errorMsg = document.querySelector("#id_phone_number"),
+//   validMsg = document.querySelector("#id_phone_number");
+//
+// var reset = function() {
+//   input.classList.remove("error");
+//   errorMsg.innerHTML = "";
+//   errorMsg.classList.add("hide");
+//   validMsg.classList.add("hide");
+// };
+//
+//     // on blur: validate
+//         input.addEventListener('blur', function () {
+//           reset();
+//           if (input.value.trim()) {
+//             if ($(this).intlTelInput("isValidNumber")) {
+//               validMsg.classList.remove("hide");
+//             } else {
+//               input.classList.add("error");
+//               var errorCode = $(this).intlTelInput("getValidationError");
+//               errorMsg.innerHTML = errorMap[errorCode];
+//               errorMsg.classList.remove("hide");
+//             }
+//           }
+//     });
 
     $number.keydown(function (e) {
         // prevents non-numeric numbers from being entered.
