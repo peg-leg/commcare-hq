@@ -79,8 +79,8 @@ And install all required packages:
 
 ### Edit localsettings.py
 
-Copy `/home/commcare-hq/commcare-hq/localsettings.example.py`
-to `/home/commcare-hq/commcare-hq/localsettings.py` and edit it to set your Django database
+Copy `/home/commcare/commcare-hq/localsettings.example.py`
+to `/home/commcare/commcare-hq/localsettings.py` and edit it to set your Django database
 settings.  The relevant part should look something like this:
 
 ```python
