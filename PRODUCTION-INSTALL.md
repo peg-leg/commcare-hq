@@ -42,8 +42,8 @@ Then start all required services:
 
 ### Create Postgres user and database
 
-    sudo -upostgresql createuser commcarehq
-    sudo -upostgresql createdb -O commcarehq commcarehq
+    sudo -upostgres createuser commcarehq
+    sudo -upostgres createdb -O commcarehq commcarehq
     
 ### Install and start kafka
 
