@@ -65,6 +65,7 @@ Login as commcare user and chdir to /home/commcarehq:
 Clone CommCare repository with it's dependencies:
 
     git clone --depth 1 https://github.com/dimagi/commcare-hq.git
+    cd commcare-hq
 	git submodule update --depth 5 --init --recursive
     
 (--depth is optional to speedup download if you don't need entire commit history)
