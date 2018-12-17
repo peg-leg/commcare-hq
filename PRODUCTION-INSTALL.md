@@ -70,7 +70,7 @@ Clone CommCare repository with it's dependencies:
 (--depth is optional to speedup download if you don't need entire commit history)
 
 Create virtualenv:
-
+    cd ~
     virtualenv .
 
 And install all required packages:
