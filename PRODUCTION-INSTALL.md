@@ -47,7 +47,7 @@ Then start all required services:
     
 ### Install and start kafka
 
-    wget http://www-eu.apache.org/dist/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
+    wget http://archive.apache.org/dist/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
 	tar xf kafka_2.11-0.10.1.0.tgz
 	cd kafka_2.11-0.10.1.0
     bin/zookeeper-server-start.sh -daemon config/zookeeper.properties
